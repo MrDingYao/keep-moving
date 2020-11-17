@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <style>
+        #move-img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<script src="../static/js/jquery.js" type="text/javascript"></script>
+<script src="../static/js/tao.js" type="text/javascript"></script>
+<!--<script src="./js/move-pic.js" type="text/javascript"></script>-->
+<body>
+<audio src="../static/video/music.mp3" autoplay="autoplay"></audio>
+
+<div id="move-img">
+    <img src="../static/img/girl.JPG" width=500 height=500>
+</div>
+
+
+<script>
+    var img = document.getElementById("move-img");
+    var x = 5;
+    var y = 5;
+    var interval = setInterval(move, 100);
+    function move() {
+        let top = img.offsetTop;
+        let left = img.offsetLeft;
+        if (left >= document.documentElement.clientWidth - img.offsetWidth || left <= 0) {
+            x = -x;
+        }
+        if (top >= document.documentElement.clientHeight - img.offsetHeight || top <= 0) {
+            y = -y;
+        }
+        top += y;
+        left += x;
+        img.style.top = top + "px";
+        img.style.left = left + "px";
+    }
+
+    // 悬停停止
+    // img.onmouseover = function () {
+    //     clearInterval(interval);
+    // }
+
+    // 放手继续运动
+    // img.onmouseout=function () {
+    //     interval = setInterval(move, 100);
+    // }
+</script>
+
+<div class="textCon">
+    <div class="words">我的小周,今天是认识你的第</div>
+    <div class="days">
+        <span class="days-number"></span>
+        <span class="days-label">天</span>
+    </div>
+    <div class="seconds"></div>
+</div>
+<script src="../static/js/index.js"></script>
+
+<!--下面是浮动的桃心-->
+<div id="bubbles" style="visibility:hidden">
+    <img src="../static/img/1.png">
+    <img src="../static/img/2.png">
+    <img src="../static/img/1.png">
+</div>
+
+</body>
+
+</html>

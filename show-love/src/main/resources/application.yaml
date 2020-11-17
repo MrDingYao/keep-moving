@@ -1,0 +1,9 @@
+server:
+  port: 10001
+
+spring:
+  freemarker:
+#    template-loader-path: classpath:/templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: classpath:/templates/
