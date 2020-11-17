@@ -13,9 +13,14 @@
     <groupId>com.santu</groupId>
     <artifactId>keep-moving</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>show-love</module>
     </modules>
+
+    <properties>
+        <maven.plugin.version>3.8.1</maven.plugin.version>
+    </properties>
 
 
 </project>
