@@ -16,11 +16,36 @@
     <packaging>pom</packaging>
     <modules>
         <module>show-love</module>
+        <module>wechat-pay</module>
+        <module>common</module>
+        <module>gateway</module>
+        <module>auth</module>
     </modules>
 
     <properties>
         <maven.plugin.version>3.8.1</maven.plugin.version>
+        <lombok.version>1.18.16</lombok.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

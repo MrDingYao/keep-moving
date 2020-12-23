@@ -1,0 +1,19 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: show-love
+  freemarker:
+    suffix: .html
+  mvc:
+    static-path-pattern: classpath:/templates/
+
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}
+        hostname: dyzp.work
+      host: dyzp.work
+      port: 8500
